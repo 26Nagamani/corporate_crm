@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PartnerFlow — Corporate Onboarding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="extras.css?v=11" />
+  <link rel="stylesheet" href="prospect-model.css?v=11" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">P</span><span>PartnerFlow</span></a>
+    <nav>
+      <a class="active" href="#" id="partnersNav"><span>◫</span> Partners <b>12</b></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="profile"><div class="avatar">AM</div><div><strong>Arjun Mehta</strong><small>Partnerships lead</small></div><button>•••</button></div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="workspace">
+      <section id="kanbanView" class="kanban-view">
+        <div class="board-header"><div><h1>Partner prospects</h1><p>Track every prospect from first contact through onboarding.</p></div><button class="primary create-lead" id="createLeadBtn">＋ Create prospect</button></div>
+        <div class="board-stats"><div><span>Total pipeline</span><strong>12</strong></div><div><span>Follow-ups due</span><strong>5</strong></div><div><span>Ready to onboard</span><strong>2</strong></div><div><span>Onboarded this month</span><strong>4</strong></div></div>
+        <div class="kanban-board">
+          <div class="kanban-column"><div class="column-head"><span><i class="stage-dot grey"></i>New</span><b>3</b></div><div class="lead-card" role="button" tabindex="0" data-stage="0" data-name="Orbit Money Exchange" data-code="PR-2026-104" data-owner="Neha Singh" data-location="Mumbai"><div class="lead-type forex">Partner</div><h3>Orbit Money Exchange</h3><p>PR-2026-104 · Mumbai</p><div><span class="mini-avatar blue">NS</span><small>Neha Singh</small><b>2d</b></div></div><div class="lead-card" role="button" tabindex="0" data-stage="0" data-name="Nova Retail Works" data-code="PR-2026-105" data-owner="Riya Kapoor" data-location="Pune"><div class="lead-type corporate">Corporate</div><h3>Nova Retail Works</h3><p>PR-2026-105 · Pune</p><div><span class="mini-avatar">RK</span><small>Riya Kapoor</small><b>4d</b></div></div></div>
+          <div class="kanban-column"><div class="column-head"><span><i class="stage-dot amber"></i>Discussion</span><b>3</b></div><div class="lead-card featured" role="button" tabindex="0" data-stage="2" data-name="Acme Global Services" data-code="PR-2026-106" data-owner="Riya Kapoor" data-location="Bengaluru"><div class="lead-type corporate">Corporate</div><h3>Acme Global Services</h3><p>Round 2 · Follow-up today</p><div><span class="mini-avatar">RK</span><small>Riya Kapoor</small><b class="due">Due</b></div></div></div>
+          <div class="kanban-column"><div class="column-head"><span><i class="stage-dot purple"></i>Ready for Onboarding</span><b>2</b></div><div class="lead-card" role="button" tabindex="0" data-stage="3" data-name="Meridian Technologies" data-code="PR-2026-107" data-owner="Arjun Mehta" data-location="Delhi NCR"><div class="lead-type corporate">Corporate</div><h3>Meridian Technologies</h3><p>Approved · Ready to begin</p><div><span class="mini-avatar orange">AM</span><small>Arjun Mehta</small><b>Ready</b></div></div></div>
+          <div class="kanban-column"><div class="column-head"><span><i class="stage-dot green-dot"></i>Onboarding</span><b>1</b></div><div class="lead-card" role="button" tabindex="0" data-stage="4" data-name="WanderCraft Tours" data-code="PR-2026-108" data-owner="Riya Kapoor" data-location="Bengaluru"><div class="lead-type corporate">Corporate</div><h3>WanderCraft Tours</h3><p>Category selection pending</p><div><span class="mini-avatar">RK</span><small>Riya Kapoor</small><b>70%</b></div></div></div>
+          <div class="kanban-column"><div class="column-head"><span><i class="stage-dot dark"></i>Onboarded</span><b>1</b></div><div class="lead-card" role="button" tabindex="0" data-stage="5" data-name="Prime FX Services" data-code="PR-2026-103" data-owner="Neha Singh" data-location="Mumbai"><div class="lead-type forex">Partner</div><h3>Prime FX Services</h3><p>Partner PT-1048 · 14 Nov</p><div><span class="mini-avatar blue">NS</span><small>Neha Singh</small><b>Live</b></div></div></div>
+        </div>
+      </section>
+
+      <div id="leadFlow" hidden>
+      <div class="hero-row">
+        <div><button class="back-board" id="backToBoard">← Back to prospects</button><div class="eyebrow">PARTNER PROSPECT</div><h1 id="flowTitle">Create partner prospect</h1><p>Capture the prospect, contacts, discussions, and onboarding status.</p></div>
+        <div class="status-pill"><span></span> Draft saved <b>just now</b></div>
+      </div>
+
+      <div class="partner-strip">
+        <div class="company-logo">AC</div>
+        <div class="partner-identity"><small>PARTNER RECORD</small><h3 id="previewName">Acme Global Services</h3><span id="previewLocation">Bengaluru, India</span></div>
+        <div class="strip-owner"><small>RELATIONSHIP OWNER</small><div><span class="mini-avatar">RK</span><strong id="previewOwner">Riya Kapoor</strong></div></div>
+        <div class="strip-progress"><div><small>ONBOARDING PROGRESS</small><b id="progressText">17%</b></div><div class="progress"><i id="progressBar"></i></div></div>
+      </div>
+
+      <div class="stepper" id="stepper"></div>
+
+      <div class="content-grid">
+        <section class="card form-card">
+          <div class="card-heading"><div class="icon-box" id="sectionIcon">01</div><div><h2 id="sectionTitle">Company basics</h2><p id="sectionDesc">Tell us who this prospect is and who will own the relationship.</p></div></div>
+          <div id="formContent"></div>
+          <div class="card-footer"><button class="ghost" id="backBtn">← Back</button><span id="stepLabel">Step 1 of 6</span><button class="primary" id="nextBtn">Save & continue <span>→</span></button></div>
+        </section>
+
+        <aside class="side-panel">
+          <div class="activity-card">
+            <div class="activity-heading"><div><small>ACTIVITY</small><h3>Interaction log</h3></div><button class="icon-action" id="logInteraction">＋</button></div>
+            <div class="activity-feed" id="activityFeed">
+              <div class="activity-item current" data-stage="3"><span class="activity-dot">↗</span><div><strong>Ready for Onboarding</strong><p>Discussions completed successfully</p><small>Today · 11:42 AM · Riya</small></div></div>
+              <div class="activity-item" data-stage="2"><span class="activity-dot">✎</span><div><strong>Discussion round 2 logged</strong><p>Proposal requested by partner</p><small>Today · 10:15 AM · Riya</small></div></div>
+              <div class="activity-item" data-stage="2"><span class="activity-dot">↗</span><div><strong>Moved to Discussion</strong><p>Primary SPOC confirmed</p><small>17 Nov · 4:30 PM · Arjun</small></div></div>
+              <div class="activity-item" data-stage="1"><span class="activity-dot">✓</span><div><strong>SPOC added</strong><p>Karan Malhotra · Finance Director</p><small>17 Nov · 2:05 PM · Arjun</small></div></div>
+              <div class="activity-item" data-stage="0"><span class="activity-dot">＋</span><div><strong>Prospect created</strong><p>Assigned to Riya Kapoor</p><small>16 Nov · 11:20 AM · Arjun</small></div></div>
+            </div>
+          </div>
+          <div class="tip-card"><span>✦</span><div><strong>Quick tip</strong><p id="tipText">Use a prospect code to reference the record across branches.</p></div></div>
+        </aside>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="interactionModal" hidden>
+    <section class="interaction-modal" role="dialog" aria-modal="true" aria-labelledby="interactionModalTitle">
+      <div class="modal-head"><div><small>PARTNER ACTIVITY</small><h2 id="interactionModalTitle">Log an interaction</h2></div><button id="closeInteraction" aria-label="Close">×</button></div>
+      <div class="modal-body fields">
+        <div class="field"><label>Interaction type *</label><select id="interactionType"><option>Discussion round</option><option>Phone call</option><option>Email</option><option>Meeting</option><option>Status update</option><option>Stage movement</option></select></div>
+        <div class="field"><label>Date *</label><input id="interactionDate" type="date" value="2026-11-18"></div>
+        <div class="field"><label>Status / outcome *</label><select id="interactionStatus"><option>Follow-up required</option><option>Proposal requested</option><option>Successful</option><option>On hold</option><option>Completed</option></select></div>
+        <div class="field"><label>Next follow-up</label><input id="interactionFollowUp" type="date"></div>
+        <div class="field full"><label>Participants</label><input id="interactionParticipants" value="Karan Malhotra, Riya Kapoor"></div>
+        <div class="field full"><label>Notes *</label><textarea id="interactionNotes" placeholder="Record what was discussed and the next action"></textarea></div>
+      </div>
+      <div class="modal-footer"><button class="ghost" id="cancelInteraction">Cancel</button><button class="primary" id="saveInteraction">Save interaction</button></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="entryModal" hidden>
+    <section class="interaction-modal entry-modal" role="dialog" aria-modal="true" aria-labelledby="entryModalTitle">
+      <div class="modal-head"><div><small id="entryModalEyebrow">PROSPECT</small><h2 id="entryModalTitle">Add details</h2><p id="entryModalDescription"></p></div><button id="closeEntryModal" aria-label="Close">×</button></div>
+      <div class="modal-body" id="entryModalContent"></div>
+      <div class="modal-footer"><button class="ghost" id="cancelEntryModal">Cancel</button><button class="primary" id="saveEntryModal">Save</button></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Draft saved successfully</div>
+  <script src="app.js?v=11"></script>
+</body>
+</html>
